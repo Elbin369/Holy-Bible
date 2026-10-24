@@ -1,0 +1,10 @@
+{
+  "name": "bible-app",
+  "version": "1.0.0",
+  "description": "Holy Bible web app packaged as mobile app",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "license": "MIT"
+}

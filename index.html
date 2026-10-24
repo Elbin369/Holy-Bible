@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <title>Holy Bible | Read, Study & Listen (Full Old & New Testaments)</title>
+  <meta name="description" content="Read and study the complete Holy Bible online (Old and New Testaments). Inspired by Bible.com with search, audio narration, verse highlighting, study notes, and bookmarks.">
+  <meta name="theme-color" content="#1e293b">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/svg+xml" href="icons/icon-192.svg">
+  <link rel="apple-touch-icon" href="icons/icon-192.svg">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="app">
+    <!-- Top Navigation Header -->
+    <header class="top-header">
+      <div class="header-container">
+        <!-- Brand / Logo -->
+        <div class="brand-section" onclick="window.bibleApp.navigateTo('GEN', 1)">
+          <div class="brand-logo">✝</div>
+          <div class="brand-title">
+            Holy Bible <span class="badge">KJV</span>
+          </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+        </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+
+        <!-- Reference Picker & Version Button -->
+        <div class="nav-center">
+          <button id="refPickerBtn" class="ref-picker-btn" title="Choose Book and Chapter">
+            <span id="currentRefLabel">Genesis 1</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <span class="version-badge" title="Translation: King James Version">KJV</span>
+        </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+
+        <!-- Action Icons (Search, Audio, Library, Settings) -->
+        <div class="header-actions">
+          <button id="openSearchBtn" class="icon-btn" title="Search Bible (/ or Ctrl+K)">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+          </button>
+
+          <button id="audioToggleBtn" class="icon-btn" title="Audio Bible Narrator">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+          </button>
+
+          <button id="openLibraryBtn" class="icon-btn" title="My Highlights, Bookmarks & Notes">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          </button>
+
+          <button id="openSettingsBtn" class="icon-btn" title="Reader Display Settings">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7V4h16v3M9 20h6M12 4v16"/></svg>
+          </button>
+
+          <!-- Challenge Trophy Button -->
+          <button id="openChallengeBtn" class="icon-btn" title="Complete the Bible Challenge" style="position:relative;">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg>
+            <span id="challengeHeaderBadge" class="challenge-nav-dot" style="display:none;"></span>
+          </button>
+        </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+      </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+    </header>
+    <!-- Challenge Progress Badge (bottom right) -->
+    <div id="challengeProgressBadgeMain" class="challenge-progress-badge"></div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+
+    <!-- Audio Player Sticky Sub-Bar -->
+    <div id="audioPlayerBar" class="audio-player-bar hidden">
+      <button id="audioPlayBtn" class="audio-play-btn" title="Play / Pause">
+        <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+      </button>
+      <span id="audioStatusLabel" class="audio-status-label">Ready to listen</span>
+      <div class="audio-controls">
+        <label style="font-size: 12px; color: var(--text-muted);">Speed:</label>
+        <select id="audioSpeedSelect" class="speed-select">
+          <option value="0.75">0.75x</option>
+          <option value="1.0" selected>1.0x</option>
+          <option value="1.25">1.25x</option>
+          <option value="1.5">1.5x</option>
+        </select>
+        <button id="audioCloseBtn" class="icon-btn" style="width: 32px; height: 32px;" title="Close Player">✕</button>
+      </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+    </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+
+    <!-- Main Scripture Reader Container -->
+    <main class="reader-container">
+      <!-- Floating Navigation Arrows -->
+      <button id="prevChapterBtn" class="chapter-nav-btn prev" title="Previous Chapter (Left Arrow)">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button id="nextChapterBtn" class="chapter-nav-btn next" title="Next Chapter (Right Arrow)">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+
+      <!-- Verse of the Day Banner -->
+      <div id="votdBanner" style="margin-bottom: 24px; padding: 14px 18px; border-radius: var(--radius-md); background: var(--bg-secondary); border: 1px solid var(--border-color); cursor: pointer; transition: all 0.2s ease;">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
+          <span style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent);">✨ Verse of the Day</span>
+          <span id="votdRef" style="font-size: 12px; font-weight: 600; color: var(--text-muted);"></span>
+        </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+        <div id="votdText" style="font-size: 14px; font-style: italic; color: var(--text-secondary);"></div>
+      </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+
+      <!-- Chapter Header -->
+      <div class="chapter-header">
+        <span id="chapterMetaTag" class="chapter-meta-tag">Old Testament • Law</span>
+        <h1 id="chapterTitle" class="chapter-title">Genesis 1</h1>
+        <p id="chapterSubtitle" class="chapter-subtitle">King James Version (KJV) • 31 Verses</p>
+      </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+
+      <!-- Scripture Text -->
+      <article id="scriptureBody" class="scripture-body">
+        <!-- Rendered dynamically by reader.js -->
+      </article>
+
+      <!-- Bottom Chapter Navigation Footer (Mobile & Desktop friendly) -->
+      <nav class="chapter-nav-footer" aria-label="Chapter Navigation">
+        <button id="prevChapterFooterBtn" class="chapter-footer-btn" title="Previous Chapter">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+          <span>Previous Chapter</span>
+        </button>
+        <button id="nextChapterFooterBtn" class="chapter-footer-btn next" title="Next Chapter">
+          <span>Next Chapter</span>
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </nav>
+    </main>
+
+    <!-- Floating Verse Action Bar (Appears when 1+ verses are selected) -->
+    <div id="verseActionBar" class="verse-action-bar">
+      <span id="selectedCount" class="selected-count-badge">1 selected</span>
+
+      <!-- Color Palette -->
+      <div class="highlight-palette">
+        <span class="color-dot gold" data-color="gold" title="Highlight Yellow"></span>
+        <span class="color-dot mint" data-color="mint" title="Highlight Mint Green"></span>
+        <span class="color-dot sky" data-color="sky" title="Highlight Sky Blue"></span>
+        <span class="color-dot rose" data-color="rose" title="Highlight Coral Pink"></span>
+        <span class="color-dot lavender" data-color="lavender" title="Highlight Lavender"></span>
+        <button class="color-dot" data-color="clear" title="Remove Highlight" style="background: none; border: 1px dashed var(--text-muted); font-size: 10px; display: flex; align-items: center; justify-content: center;">✕</button>
+      </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+
+      <!-- Actions -->
+      <button id="actionBookmarkBtn" class="action-pill-btn" title="Bookmark passage">📌 Bookmark</button>
+      <button id="actionNoteBtn" class="action-pill-btn" title="Write study note">📝 Note</button>
+      <button id="actionCopyBtn" class="action-pill-btn" title="Copy reference & text">📋 Copy</button>
+      <button id="actionShareBtn" class="action-pill-btn" title="Create shareable verse card">🎨 Card</button>
+      <button id="actionClearBtn" class="action-pill-btn" title="Deselect" style="color: var(--text-muted);">✕</button>
+    </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+
+    <!-- Book & Chapter Picker Modal -->
+    <div id="pickerModal" class="modal-overlay">
+      <div class="modal-card">
+        <div class="modal-header">
+          <div class="modal-title">Select Book & Chapter</div>
+          <button id="closePickerBtn" class="icon-btn">✕</button>
+        </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+
+        <!-- Books View -->
+        <div id="pickerBooksView" style="display: flex; flex-direction: column; height: 100%; overflow: hidden;">
+          <div class="picker-tabs">
+            <button class="picker-tab-btn active" data-testament="all">All (66)</button>
+            <button class="picker-tab-btn" data-testament="OT">Old Testament (39)</button>
+            <button class="picker-tab-btn" data-testament="NT">New Testament (27)</button>
+          </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+          <div class="modal-body">
+            <input type="text" id="pickerSearchInput" class="picker-search-input" placeholder="Filter books (e.g. Genesis, Matthew, Romans)...">
+            <div id="pickerBooksContainer"></div>
+          </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+        </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+
+        <!-- Chapters View -->
+        <div id="pickerChaptersView" class="hidden" style="display: flex; flex-direction: column; height: 100%;">
+          <div style="padding: 12px 20px; border-bottom: 1px solid var(--border-color); display: flex; align-items: center; gap: 12px; background: var(--bg-secondary);">
+            <button id="pickerBackToBooksBtn" class="icon-btn" style="width: 32px; height: 32px;">←</button>
+            <span id="pickerSelectedBookName" style="font-weight: 700; font-size: 16px;"></span>
+          </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+          <div class="modal-body">
+            <div style="font-size: 12px; color: var(--text-muted); margin-bottom: 8px;">Select a chapter:</div>
+            <div id="pickerChaptersGrid" class="chapters-grid"></div>
+          </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+        </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+      </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+    </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+
+    <!-- Full-Text Search Modal -->
+    <div id="searchModal" class="modal-overlay">
+      <div class="modal-card">
+        <div class="modal-header">
+          <div class="modal-title">Search Scripture</div>
+          <button id="closeSearchBtn" class="icon-btn">✕</button>
+        </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+        <div class="picker-tabs">
+          <button class="picker-tab-btn search-filter-tab active" data-filter="all">All Scripture</button>
+          <button class="picker-tab-btn search-filter-tab" data-filter="OT">Old Testament</button>
+          <button class="picker-tab-btn search-filter-tab" data-filter="NT">New Testament</button>
+        </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+        <div class="modal-body">
+          <input type="text" id="bibleSearchInput" class="picker-search-input" placeholder="Search reference (e.g. John 3:16) or keywords (e.g. love, faith, created)...">
+          <div id="searchResultsCount" style="font-size: 12px; font-weight: 600; color: var(--text-muted); margin-bottom: 8px;"></div>
+          <div id="searchResultsList" class="search-results-list">
+            <div class="empty-state" style="text-align: center; padding: 40px 20px; color: var(--text-muted);">
+              Type a book, reference, or keyword to search all 31,102 verses instantly.
+            </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+          </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+        </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+      </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+    </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+
+    <!-- Reader Settings Modal -->
+    <div id="settingsModal" class="modal-overlay">
+      <div class="modal-card" style="max-width: 480px;">
+        <div class="modal-header">
+          <div class="modal-title">Display Settings</div>
+          <button id="closeSettingsBtn" class="icon-btn">✕</button>
+        </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+        <div class="modal-body">
+          <!-- Theme -->
+          <div class="setting-row" style="flex-direction: column; align-items: flex-start; gap: 8px;">
+            <div class="setting-label">Reading Theme</div>
+            <div class="theme-options-grid" style="width: 100%;">
+              <button class="theme-pill-btn active" data-theme="light">Light</button>
+              <button class="theme-pill-btn" data-theme="sepia">Sepia</button>
+              <button class="theme-pill-btn" data-theme="dark">Dark</button>
+              <button class="theme-pill-btn" data-theme="midnight">Midnight</button>
+            </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+          </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+
+          <!-- Verse Layout Mode -->
+          <div class="setting-row">
+            <div>
+              <div class="setting-label">Verse Layout</div>
+              <div class="setting-desc">Line-by-line or continuous paragraph</div>
+            </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+            <div style="display: flex; gap: 6px;">
+              <button id="layoutLineBtn" class="theme-pill-btn active" style="padding: 6px 12px;">New Line</button>
+              <button id="layoutParaBtn" class="theme-pill-btn" style="padding: 6px 12px;">Paragraph</button>
+            </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+          </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+
+          <!-- Typography -->
+          <div class="setting-row">
+            <div>
+              <div class="setting-label">Typography</div>
+              <div class="setting-desc">Serif (traditional) or Sans (modern)</div>
+            </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+            <div style="display: flex; gap: 6px;">
+              <button id="fontSerifBtn" class="theme-pill-btn active" style="padding: 6px 12px;">Serif</button>
+              <button id="fontSansBtn" class="theme-pill-btn" style="padding: 6px 12px;">Sans</button>
+            </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+          </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+
+          <!-- Font Size -->
+          <div class="setting-row">
+            <div>
+              <div class="setting-label">Font Size</div>
+              <div id="fontSizeDisplay" class="setting-desc">19px</div>
+            </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+            <div style="display: flex; gap: 6px;">
+              <button id="fontDecBtn" class="theme-pill-btn" style="width: 36px; height: 36px;">A-</button>
+              <button id="fontIncBtn" class="theme-pill-btn" style="width: 36px; height: 36px;">A+</button>
+            </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+          </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+
+          <!-- Verse Numbers Toggle -->
+          <div class="setting-row">
+            <div>
+              <div class="setting-label">Verse Numbers</div>
+              <div class="setting-desc">Show or hide superscript verse numbering</div>
+            </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+            <input type="checkbox" id="toggleVerseNums" checked style="width: 18px; height: 18px; cursor: pointer;">
+          </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+        </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+      </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+    </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+
+    <!-- Personal Note Modal -->
+    <div id="noteModal" class="modal-overlay">
+      <div class="modal-card" style="max-width: 500px;">
+        <div class="modal-header">
+          <div id="noteRefTitle" class="modal-title">Add Note</div>
+          <button id="closeNoteBtn" class="icon-btn">✕</button>
+        </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+        <div class="modal-body">
+          <textarea id="noteTextarea" style="width: 100%; height: 150px; padding: 12px; border-radius: var(--radius-md); border: 1px solid var(--border-color); background: var(--bg-primary); resize: vertical; font-size: 14px;" placeholder="Write personal reflections, cross-references, or study notes..."></textarea>
+          <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 14px;">
+            <button id="saveNoteBtn" style="padding: 8px 18px; background: var(--accent); color: #fff; font-weight: 600; border-radius: var(--radius-full); font-size: 13px;">Save Note</button>
+          </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+        </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+      </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+    </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+
+    <!-- Shareable Verse Card Modal -->
+    <div id="verseCardModal" class="modal-overlay">
+      <div class="modal-card" style="max-width: 520px;">
+        <div class="modal-header">
+          <div class="modal-title">Share Verse Card</div>
+          <button id="closeCardModalBtn" class="icon-btn">✕</button>
+        </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+        <div class="modal-body">
+          <!-- Card Preview -->
+          <div id="verseCardPreview" style="padding: 36px 24px; border-radius: var(--radius-lg); color: #ffffff; text-align: center; box-shadow: var(--shadow-lg); margin-bottom: 20px; min-height: 220px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+            <div id="cardVerseText" style="font-family: var(--font-serif); font-size: 18px; line-height: 1.6; font-weight: 500; margin-bottom: 16px;"></div>
+            <div id="cardVerseRef" style="font-size: 13px; font-weight: 700; letter-spacing: 0.05em; opacity: 0.9;"></div>
+          </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+
+          <!-- Color Swatches -->
+          <div style="font-size: 12px; font-weight: 600; color: var(--text-muted); margin-bottom: 8px;">Select Style Theme:</div>
+          <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+            <div class="card-bg-swatch" data-bg="linear-gradient(135deg, #1e3a8a, #3b82f6)" style="width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, #1e3a8a, #3b82f6); cursor: pointer;"></div>
+            <div class="card-bg-swatch" data-bg="linear-gradient(135deg, #4c1d95, #8b5cf6)" style="width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, #4c1d95, #8b5cf6); cursor: pointer;"></div>
+            <div class="card-bg-swatch" data-bg="linear-gradient(135deg, #831843, #ec4899)" style="width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, #831843, #ec4899); cursor: pointer;"></div>
+            <div class="card-bg-swatch" data-bg="linear-gradient(135deg, #064e3b, #10b981)" style="width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, #064e3b, #10b981); cursor: pointer;"></div>
+            <div class="card-bg-swatch" data-bg="linear-gradient(135deg, #78350f, #f59e0b)" style="width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, #78350f, #f59e0b); cursor: pointer;"></div>
+            <div class="card-bg-swatch" data-bg="linear-gradient(135deg, #0f172a, #334155)" style="width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, #0f172a, #334155); cursor: pointer;"></div>
+          </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+
+          <button id="copyCardTextBtn" style="width: 100%; padding: 10px; background: var(--accent); color: #fff; font-weight: 600; border-radius: var(--radius-md); font-size: 14px;">Copy Verse Quote</button>
+        </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+      </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+    </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+
+    <!-- Study Library Drawer -->
+    <aside id="libraryDrawer" class="library-drawer">
+      <div style="padding: 16px 20px; border-bottom: 1px solid var(--border-color); display: flex; align-items: center; justify-content: space-between;">
+        <span style="font-weight: 700; font-size: 16px;">My Study Library</span>
+        <button id="closeLibraryBtn" class="icon-btn">✕</button>
+      </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+
+      <div class="picker-tabs" style="overflow-x: auto; white-space: nowrap;">
+        <button class="picker-tab-btn lib-tab-btn active" data-tab="highlights">Highlights</button>
+        <button class="picker-tab-btn lib-tab-btn" data-tab="bookmarks">Bookmarks</button>
+        <button class="picker-tab-btn lib-tab-btn" data-tab="notes">Notes</button>
+        <button class="picker-tab-btn lib-tab-btn" data-tab="plans">Plans</button>
+      </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+
+      <div id="libraryContentArea" class="modal-body">
+        <!-- Rendered by library.js -->
+      </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+    </aside>
+
+    <!-- Mobile Bottom Navigation Bar (Visible only on mobile devices) -->
+    <nav class="mobile-bottom-nav" aria-label="Mobile Navigation">
+      <button id="mobileNavRead" class="mobile-nav-item active" title="Read Scripture">
+        <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        <span>Read</span>
+      </button>
+
+      <button id="mobileNavSearch" class="mobile-nav-item" title="Search Bible">
+        <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <span>Search</span>
+      </button>
+
+      <button id="mobileNavAudio" class="mobile-nav-item" title="Listen Aloud">
+        <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+        <span>Audio</span>
+      </button>
+
+      <button id="mobileNavLibrary" class="mobile-nav-item" title="Highlights & Notes">
+        <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        <span>Library</span>
+      </button>
+
+      <button id="mobileNavSettings" class="mobile-nav-item" title="Display Settings">
+        <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7V4h16v3M9 20h6M12 4v16"/></svg>
+        <span>Display</span>
+      </button>
+
+      <!-- Challenge Nav Item -->
+      <button id="mobileNavChallenge" class="mobile-nav-item" title="Bible Challenge" style="position:relative;">
+        <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg>
+        <span>Challenge</span>
+        <span id="challengeNavBadge" class="challenge-nav-dot" style="display:none;"></span>
+      </button>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <!-- BIBLE CHALLENGE MODAL                                              -->
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <div id="challengeOverlay" class="modal-overlay challenge-overlay" role="dialog" aria-modal="true" aria-label="Bible Challenge">
+      <div class="modal-card challenge-modal-card">
+        <div class="modal-header">
+          <div class="modal-title">🏆 Bible Reading Challenge</div>
+          <button id="closeChallengeBtn" class="modal-close-btn" title="Close">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+          </button>
+        </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+        <div id="challengeModalContent" class="modal-body challenge-modal-body">
+          <!-- Rendered by challenge.js -->
+        </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+      </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+    </div>
+    <!-- Challenge Progress Badge (bottom right) -->
+
+
+    <!-- Toast Notification Container -->
+    <div id="toastContainer" class="toast-container"></div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="data/bible_kjv_data.js"></script>
+  <script src="js/library.js"></script>
+  <script src="js/reader.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/verse_card.js"></script>
+  <script src="js/challenge.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js').catch(() => {});
+      });
+    }
+  </script>
+</body>
+</html>

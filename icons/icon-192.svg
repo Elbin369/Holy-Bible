@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="110" fill="url(#grad)" />
+  <!-- Book Shape -->
+  <path d="M120 100 C180 85 240 105 256 125 C272 105 332 85 392 100 L392 380 C332 365 272 385 256 405 C240 385 180 365 120 380 Z" fill="#ffffff" />
+  <path d="M256 125 L256 405" stroke="#cbd5e1" stroke-width="4" stroke-linecap="round"/>
+  <!-- Gold Cross -->
+  <path d="M324 165 L324 315 M289 205 L359 205" stroke="url(#gold)" stroke-width="14" stroke-linecap="round" />
+</svg>

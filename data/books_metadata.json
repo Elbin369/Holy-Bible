@@ -1,0 +1,662 @@
+﻿[
+    {
+        "order":  1,
+        "id":  "GEN",
+        "name":  "Genesis",
+        "testament":  "OT",
+        "genre":  "Law",
+        "file":  "Genesis.json",
+        "chaptersCount":  50,
+        "versesCount":  1533
+    },
+    {
+        "order":  2,
+        "id":  "EXO",
+        "name":  "Exodus",
+        "testament":  "OT",
+        "genre":  "Law",
+        "file":  "Exodus.json",
+        "chaptersCount":  40,
+        "versesCount":  1213
+    },
+    {
+        "order":  3,
+        "id":  "LEV",
+        "name":  "Leviticus",
+        "testament":  "OT",
+        "genre":  "Law",
+        "file":  "Leviticus.json",
+        "chaptersCount":  27,
+        "versesCount":  859
+    },
+    {
+        "order":  4,
+        "id":  "NUM",
+        "name":  "Numbers",
+        "testament":  "OT",
+        "genre":  "Law",
+        "file":  "Numbers.json",
+        "chaptersCount":  36,
+        "versesCount":  1288
+    },
+    {
+        "order":  5,
+        "id":  "DEU",
+        "name":  "Deuteronomy",
+        "testament":  "OT",
+        "genre":  "Law",
+        "file":  "Deuteronomy.json",
+        "chaptersCount":  34,
+        "versesCount":  959
+    },
+    {
+        "order":  6,
+        "id":  "JOS",
+        "name":  "Joshua",
+        "testament":  "OT",
+        "genre":  "History",
+        "file":  "Joshua.json",
+        "chaptersCount":  24,
+        "versesCount":  658
+    },
+    {
+        "order":  7,
+        "id":  "JDG",
+        "name":  "Judges",
+        "testament":  "OT",
+        "genre":  "History",
+        "file":  "Judges.json",
+        "chaptersCount":  21,
+        "versesCount":  618
+    },
+    {
+        "order":  8,
+        "id":  "RUT",
+        "name":  "Ruth",
+        "testament":  "OT",
+        "genre":  "History",
+        "file":  "Ruth.json",
+        "chaptersCount":  4,
+        "versesCount":  85
+    },
+    {
+        "order":  9,
+        "id":  "1SA",
+        "name":  "1 Samuel",
+        "testament":  "OT",
+        "genre":  "History",
+        "file":  "1Samuel.json",
+        "chaptersCount":  31,
+        "versesCount":  810
+    },
+    {
+        "order":  10,
+        "id":  "2SA",
+        "name":  "2 Samuel",
+        "testament":  "OT",
+        "genre":  "History",
+        "file":  "2Samuel.json",
+        "chaptersCount":  24,
+        "versesCount":  695
+    },
+    {
+        "order":  11,
+        "id":  "1KI",
+        "name":  "1 Kings",
+        "testament":  "OT",
+        "genre":  "History",
+        "file":  "1Kings.json",
+        "chaptersCount":  22,
+        "versesCount":  816
+    },
+    {
+        "order":  12,
+        "id":  "2KI",
+        "name":  "2 Kings",
+        "testament":  "OT",
+        "genre":  "History",
+        "file":  "2Kings.json",
+        "chaptersCount":  25,
+        "versesCount":  719
+    },
+    {
+        "order":  13,
+        "id":  "1CH",
+        "name":  "1 Chronicles",
+        "testament":  "OT",
+        "genre":  "History",
+        "file":  "1Chronicles.json",
+        "chaptersCount":  29,
+        "versesCount":  942
+    },
+    {
+        "order":  14,
+        "id":  "2CH",
+        "name":  "2 Chronicles",
+        "testament":  "OT",
+        "genre":  "History",
+        "file":  "2Chronicles.json",
+        "chaptersCount":  36,
+        "versesCount":  822
+    },
+    {
+        "order":  15,
+        "id":  "EZR",
+        "name":  "Ezra",
+        "testament":  "OT",
+        "genre":  "History",
+        "file":  "Ezra.json",
+        "chaptersCount":  10,
+        "versesCount":  280
+    },
+    {
+        "order":  16,
+        "id":  "NEH",
+        "name":  "Nehemiah",
+        "testament":  "OT",
+        "genre":  "History",
+        "file":  "Nehemiah.json",
+        "chaptersCount":  13,
+        "versesCount":  406
+    },
+    {
+        "order":  17,
+        "id":  "EST",
+        "name":  "Esther",
+        "testament":  "OT",
+        "genre":  "History",
+        "file":  "Esther.json",
+        "chaptersCount":  10,
+        "versesCount":  167
+    },
+    {
+        "order":  18,
+        "id":  "JOB",
+        "name":  "Job",
+        "testament":  "OT",
+        "genre":  "Poetry",
+        "file":  "Job.json",
+        "chaptersCount":  42,
+        "versesCount":  1070
+    },
+    {
+        "order":  19,
+        "id":  "PSA",
+        "name":  "Psalms",
+        "testament":  "OT",
+        "genre":  "Poetry",
+        "file":  "Psalms.json",
+        "chaptersCount":  150,
+        "versesCount":  2461
+    },
+    {
+        "order":  20,
+        "id":  "PRO",
+        "name":  "Proverbs",
+        "testament":  "OT",
+        "genre":  "Wisdom",
+        "file":  "Proverbs.json",
+        "chaptersCount":  31,
+        "versesCount":  915
+    },
+    {
+        "order":  21,
+        "id":  "ECC",
+        "name":  "Ecclesiastes",
+        "testament":  "OT",
+        "genre":  "Wisdom",
+        "file":  "Ecclesiastes.json",
+        "chaptersCount":  12,
+        "versesCount":  222
+    },
+    {
+        "order":  22,
+        "id":  "SNG",
+        "name":  "Song of Solomon",
+        "testament":  "OT",
+        "genre":  "Poetry",
+        "file":  "SongofSolomon.json",
+        "chaptersCount":  8,
+        "versesCount":  117
+    },
+    {
+        "order":  23,
+        "id":  "ISA",
+        "name":  "Isaiah",
+        "testament":  "OT",
+        "genre":  "Major Prophets",
+        "file":  "Isaiah.json",
+        "chaptersCount":  66,
+        "versesCount":  1292
+    },
+    {
+        "order":  24,
+        "id":  "JER",
+        "name":  "Jeremiah",
+        "testament":  "OT",
+        "genre":  "Major Prophets",
+        "file":  "Jeremiah.json",
+        "chaptersCount":  52,
+        "versesCount":  1364
+    },
+    {
+        "order":  25,
+        "id":  "LAM",
+        "name":  "Lamentations",
+        "testament":  "OT",
+        "genre":  "Major Prophets",
+        "file":  "Lamentations.json",
+        "chaptersCount":  5,
+        "versesCount":  154
+    },
+    {
+        "order":  26,
+        "id":  "EZK",
+        "name":  "Ezekiel",
+        "testament":  "OT",
+        "genre":  "Major Prophets",
+        "file":  "Ezekiel.json",
+        "chaptersCount":  48,
+        "versesCount":  1273
+    },
+    {
+        "order":  27,
+        "id":  "DAN",
+        "name":  "Daniel",
+        "testament":  "OT",
+        "genre":  "Major Prophets",
+        "file":  "Daniel.json",
+        "chaptersCount":  12,
+        "versesCount":  357
+    },
+    {
+        "order":  28,
+        "id":  "HOS",
+        "name":  "Hosea",
+        "testament":  "OT",
+        "genre":  "Minor Prophets",
+        "file":  "Hosea.json",
+        "chaptersCount":  14,
+        "versesCount":  197
+    },
+    {
+        "order":  29,
+        "id":  "JOL",
+        "name":  "Joel",
+        "testament":  "OT",
+        "genre":  "Minor Prophets",
+        "file":  "Joel.json",
+        "chaptersCount":  3,
+        "versesCount":  73
+    },
+    {
+        "order":  30,
+        "id":  "AMO",
+        "name":  "Amos",
+        "testament":  "OT",
+        "genre":  "Minor Prophets",
+        "file":  "Amos.json",
+        "chaptersCount":  9,
+        "versesCount":  146
+    },
+    {
+        "order":  31,
+        "id":  "OBA",
+        "name":  "Obadiah",
+        "testament":  "OT",
+        "genre":  "Minor Prophets",
+        "file":  "Obadiah.json",
+        "chaptersCount":  1,
+        "versesCount":  21
+    },
+    {
+        "order":  32,
+        "id":  "JON",
+        "name":  "Jonah",
+        "testament":  "OT",
+        "genre":  "Minor Prophets",
+        "file":  "Jonah.json",
+        "chaptersCount":  4,
+        "versesCount":  48
+    },
+    {
+        "order":  33,
+        "id":  "MIC",
+        "name":  "Micah",
+        "testament":  "OT",
+        "genre":  "Minor Prophets",
+        "file":  "Micah.json",
+        "chaptersCount":  7,
+        "versesCount":  105
+    },
+    {
+        "order":  34,
+        "id":  "NAM",
+        "name":  "Nahum",
+        "testament":  "OT",
+        "genre":  "Minor Prophets",
+        "file":  "Nahum.json",
+        "chaptersCount":  3,
+        "versesCount":  47
+    },
+    {
+        "order":  35,
+        "id":  "HAB",
+        "name":  "Habakkuk",
+        "testament":  "OT",
+        "genre":  "Minor Prophets",
+        "file":  "Habakkuk.json",
+        "chaptersCount":  3,
+        "versesCount":  56
+    },
+    {
+        "order":  36,
+        "id":  "ZEP",
+        "name":  "Zephaniah",
+        "testament":  "OT",
+        "genre":  "Minor Prophets",
+        "file":  "Zephaniah.json",
+        "chaptersCount":  3,
+        "versesCount":  53
+    },
+    {
+        "order":  37,
+        "id":  "HAG",
+        "name":  "Haggai",
+        "testament":  "OT",
+        "genre":  "Minor Prophets",
+        "file":  "Haggai.json",
+        "chaptersCount":  2,
+        "versesCount":  38
+    },
+    {
+        "order":  38,
+        "id":  "ZEC",
+        "name":  "Zechariah",
+        "testament":  "OT",
+        "genre":  "Minor Prophets",
+        "file":  "Zechariah.json",
+        "chaptersCount":  14,
+        "versesCount":  211
+    },
+    {
+        "order":  39,
+        "id":  "MAL",
+        "name":  "Malachi",
+        "testament":  "OT",
+        "genre":  "Minor Prophets",
+        "file":  "Malachi.json",
+        "chaptersCount":  4,
+        "versesCount":  55
+    },
+    {
+        "order":  40,
+        "id":  "MAT",
+        "name":  "Matthew",
+        "testament":  "NT",
+        "genre":  "Gospels",
+        "file":  "Matthew.json",
+        "chaptersCount":  28,
+        "versesCount":  1071
+    },
+    {
+        "order":  41,
+        "id":  "MRK",
+        "name":  "Mark",
+        "testament":  "NT",
+        "genre":  "Gospels",
+        "file":  "Mark.json",
+        "chaptersCount":  16,
+        "versesCount":  678
+    },
+    {
+        "order":  42,
+        "id":  "LUK",
+        "name":  "Luke",
+        "testament":  "NT",
+        "genre":  "Gospels",
+        "file":  "Luke.json",
+        "chaptersCount":  24,
+        "versesCount":  1151
+    },
+    {
+        "order":  43,
+        "id":  "JHN",
+        "name":  "John",
+        "testament":  "NT",
+        "genre":  "Gospels",
+        "file":  "John.json",
+        "chaptersCount":  21,
+        "versesCount":  879
+    },
+    {
+        "order":  44,
+        "id":  "ACT",
+        "name":  "Acts",
+        "testament":  "NT",
+        "genre":  "History",
+        "file":  "Acts.json",
+        "chaptersCount":  28,
+        "versesCount":  1007
+    },
+    {
+        "order":  45,
+        "id":  "ROM",
+        "name":  "Romans",
+        "testament":  "NT",
+        "genre":  "Pauline Epistles",
+        "file":  "Romans.json",
+        "chaptersCount":  16,
+        "versesCount":  433
+    },
+    {
+        "order":  46,
+        "id":  "1CO",
+        "name":  "1 Corinthians",
+        "testament":  "NT",
+        "genre":  "Pauline Epistles",
+        "file":  "1Corinthians.json",
+        "chaptersCount":  16,
+        "versesCount":  437
+    },
+    {
+        "order":  47,
+        "id":  "2CO",
+        "name":  "2 Corinthians",
+        "testament":  "NT",
+        "genre":  "Pauline Epistles",
+        "file":  "2Corinthians.json",
+        "chaptersCount":  13,
+        "versesCount":  257
+    },
+    {
+        "order":  48,
+        "id":  "GAL",
+        "name":  "Galatians",
+        "testament":  "NT",
+        "genre":  "Pauline Epistles",
+        "file":  "Galatians.json",
+        "chaptersCount":  6,
+        "versesCount":  149
+    },
+    {
+        "order":  49,
+        "id":  "EPH",
+        "name":  "Ephesians",
+        "testament":  "NT",
+        "genre":  "Pauline Epistles",
+        "file":  "Ephesians.json",
+        "chaptersCount":  6,
+        "versesCount":  155
+    },
+    {
+        "order":  50,
+        "id":  "PHP",
+        "name":  "Philippians",
+        "testament":  "NT",
+        "genre":  "Pauline Epistles",
+        "file":  "Philippians.json",
+        "chaptersCount":  4,
+        "versesCount":  104
+    },
+    {
+        "order":  51,
+        "id":  "COL",
+        "name":  "Colossians",
+        "testament":  "NT",
+        "genre":  "Pauline Epistles",
+        "file":  "Colossians.json",
+        "chaptersCount":  4,
+        "versesCount":  95
+    },
+    {
+        "order":  52,
+        "id":  "1TH",
+        "name":  "1 Thessalonians",
+        "testament":  "NT",
+        "genre":  "Pauline Epistles",
+        "file":  "1Thessalonians.json",
+        "chaptersCount":  5,
+        "versesCount":  89
+    },
+    {
+        "order":  53,
+        "id":  "2TH",
+        "name":  "2 Thessalonians",
+        "testament":  "NT",
+        "genre":  "Pauline Epistles",
+        "file":  "2Thessalonians.json",
+        "chaptersCount":  3,
+        "versesCount":  47
+    },
+    {
+        "order":  54,
+        "id":  "1TI",
+        "name":  "1 Timothy",
+        "testament":  "NT",
+        "genre":  "Pauline Epistles",
+        "file":  "1Timothy.json",
+        "chaptersCount":  6,
+        "versesCount":  113
+    },
+    {
+        "order":  55,
+        "id":  "2TI",
+        "name":  "2 Timothy",
+        "testament":  "NT",
+        "genre":  "Pauline Epistles",
+        "file":  "2Timothy.json",
+        "chaptersCount":  4,
+        "versesCount":  83
+    },
+    {
+        "order":  56,
+        "id":  "TIT",
+        "name":  "Titus",
+        "testament":  "NT",
+        "genre":  "Pauline Epistles",
+        "file":  "Titus.json",
+        "chaptersCount":  3,
+        "versesCount":  46
+    },
+    {
+        "order":  57,
+        "id":  "PHM",
+        "name":  "Philemon",
+        "testament":  "NT",
+        "genre":  "Pauline Epistles",
+        "file":  "Philemon.json",
+        "chaptersCount":  1,
+        "versesCount":  25
+    },
+    {
+        "order":  58,
+        "id":  "HEB",
+        "name":  "Hebrews",
+        "testament":  "NT",
+        "genre":  "General Epistles",
+        "file":  "Hebrews.json",
+        "chaptersCount":  13,
+        "versesCount":  303
+    },
+    {
+        "order":  59,
+        "id":  "JAS",
+        "name":  "James",
+        "testament":  "NT",
+        "genre":  "General Epistles",
+        "file":  "James.json",
+        "chaptersCount":  5,
+        "versesCount":  108
+    },
+    {
+        "order":  60,
+        "id":  "1PE",
+        "name":  "1 Peter",
+        "testament":  "NT",
+        "genre":  "General Epistles",
+        "file":  "1Peter.json",
+        "chaptersCount":  5,
+        "versesCount":  105
+    },
+    {
+        "order":  61,
+        "id":  "2PE",
+        "name":  "2 Peter",
+        "testament":  "NT",
+        "genre":  "General Epistles",
+        "file":  "2Peter.json",
+        "chaptersCount":  3,
+        "versesCount":  61
+    },
+    {
+        "order":  62,
+        "id":  "1JN",
+        "name":  "1 John",
+        "testament":  "NT",
+        "genre":  "General Epistles",
+        "file":  "1John.json",
+        "chaptersCount":  5,
+        "versesCount":  105
+    },
+    {
+        "order":  63,
+        "id":  "2JN",
+        "name":  "2 John",
+        "testament":  "NT",
+        "genre":  "General Epistles",
+        "file":  "2John.json",
+        "chaptersCount":  1,
+        "versesCount":  13
+    },
+    {
+        "order":  64,
+        "id":  "3JN",
+        "name":  "3 John",
+        "testament":  "NT",
+        "genre":  "General Epistles",
+        "file":  "3John.json",
+        "chaptersCount":  1,
+        "versesCount":  14
+    },
+    {
+        "order":  65,
+        "id":  "JUD",
+        "name":  "Jude",
+        "testament":  "NT",
+        "genre":  "General Epistles",
+        "file":  "Jude.json",
+        "chaptersCount":  1,
+        "versesCount":  25
+    },
+    {
+        "order":  66,
+        "id":  "REV",
+        "name":  "Revelation",
+        "testament":  "NT",
+        "genre":  "Prophecy",
+        "file":  "Revelation.json",
+        "chaptersCount":  22,
+        "versesCount":  404
+    }
+]
